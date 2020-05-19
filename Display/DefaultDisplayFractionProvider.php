@@ -12,28 +12,12 @@
 
 declare(strict_types=1);
 
-namespace CoreShop\Component\Currency\Model;
+namespace CoreShop\Component\Currency\Display;
 
-trait CurrencyAwareTrait
+class DefaultDisplayFractionProvider implements DisplayFractionProviderInterface
 {
-    /**
-     * @var CurrencyInterface
-     */
-    protected $currency;
-
-    /**
-     * @return CurrencyInterface
-     */
-    public function getCurrency()
+    public function getDisplayFraction(array $context): int
     {
-        return $this->currency;
-    }
-
-    /**
-     * @param CurrencyInterface $currency
-     */
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
+        return 2;
     }
 }
